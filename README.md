@@ -44,6 +44,27 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 ```
+- [] In the thais_server/thais_server/settings.py file, scroll to the `TEMPLATES` variable and find the `DIRS` property. It should be an empty array. Add to it a string `templates`
+- [] In the `thais_server` folder (the outer one), make a `templates` folder.
+- [] In the `templates` folder, make a `zack.html` file with whatever content you want.
+- [] In the thais_server/toppings/views.py file, add this text:
+```
+def zacks_html(request):
+    template = loader.get_template("zack.html")
+    return HttpResponse(template.render())
+```
+- [] In the thais_server/toppings/urls.py file, replace the file contents with this:
+```
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('blah/', views.blah, name='blah'),
+    path('hello/', views.zacks_html, name='hello'),
+]
+```
 (In the terminal):
 - [] Type `python3 manage.py migrate` or `py manage.py migrate`
 - [] Type `python3 manage.py runserver` or `py manage.py runserver`
