@@ -21,7 +21,7 @@ def index(request):
     return HttpResponse("Some toppings.")
 ```
 
-- [] Make a the thais_server/toppings/urls.py file, and then enter this text:
+- [] Make a thais_server/toppings/urls.py file, and then enter this text:
 
 ```
 from django.urls import path
