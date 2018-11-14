@@ -21,7 +21,7 @@ def index(request):
     return HttpResponse("Some toppings.")
 ```
 
-- [] Make a the thais_server/thais_server/toppings/urls.py file, and then enter this text:
+- [] Make a the thais_server/toppings/urls.py file, and then enter this text:
 
 ```
 from django.urls import path
@@ -66,6 +66,7 @@ urlpatterns = [
 ]
 ```
 (In the terminal):
+- [] Type `cd thais_server`
 - [] Type `python3 manage.py migrate` or `py manage.py migrate`
 - [] Type `python3 manage.py runserver` or `py manage.py runserver`
 
